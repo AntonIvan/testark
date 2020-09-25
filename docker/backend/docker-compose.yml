@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  arkonit_backend:
+    image: arkonit_backend
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - /app/testark:/app
+
+  arkonit-frontend:
+    image: arkonit-frontend
+    build:
+      context: ../frontend/
+      dockerfile: Dockerfile
+    ports:
+      - 80:80
+    links:
+      - arkonit_backend
+    volumes:
+      - /app/testark:/app
