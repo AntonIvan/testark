@@ -29,7 +29,7 @@ class HandlerData
             if($array !== false) {
                 return $this->readWrite($array);
             }
-            sleep(10);
+            sleep(15);
         }
     }
 

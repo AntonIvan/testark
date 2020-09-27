@@ -15,7 +15,7 @@ class HandlerParsingData
 
     public function arrayDiffHandler() {
         $data = $this->parserData(resolve(ParserData::class)->request());
-        if(count($data) != $this->db->count()) {
+        if($data[0] != $this->db->last()->order) {
             return $data;
         }
         return false;

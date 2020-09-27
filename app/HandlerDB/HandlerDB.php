@@ -19,8 +19,8 @@ class HandlerDB
         return Order::all();
     }
 
-    function count() {
-        return Order::all()->count();
+    function last() {
+        return Order::all()->sortBy('order')->last();
     }
 
     private function unionArray($array) {
